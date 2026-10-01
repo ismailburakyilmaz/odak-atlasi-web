@@ -1,0 +1,3 @@
+"use client";
+import {Select,SelectContent,SelectItem,SelectTrigger,SelectValue} from "@/components/ui/select";
+export default function Picker({label,value,onChange,options}:{label:string;value:string;onChange:(value:string)=>void;options:{value:string;label:string}[]}){return <div className="picker"><span className="picker-label">{label}</span><Select value={value} onValueChange={onChange}><SelectTrigger aria-label={label} className="w-full min-h-11"><SelectValue/></SelectTrigger><SelectContent>{options.map(o=><SelectItem key={o.value} value={o.value}>{o.label}</SelectItem>)}</SelectContent></Select></div>;}
